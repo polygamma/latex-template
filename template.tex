@@ -1,0 +1,129 @@
+\documentclass[11pt,twoside,final,a4paper]{amsart}
+
+\usepackage{amsmath,amsthm,amscd,amsfonts,amssymb,enumerate,minted,color,graphicx,stmaryrd}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[english]{babel} % SET LANGUAGE HERE
+\setlength\parindent{0pt}
+
+% % % MINTED % % %
+
+\definecolor{light-gray}{gray}{0.95}
+
+\newminted[myC]{c}{
+baselinestretch=1.2,
+bgcolor=light-gray,
+fontsize=\footnotesize,
+breaklines=true,
+xleftmargin=10mm}
+
+% % % OWN THEOREMS % % %
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{theorem}
+
+% % % PREAMBLE % % %
+
+\title{example document}
+
+\author[J. Westphalen]{Jonni Westphalen}
+
+% % % DOCUMENT START % % %
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\end{abstract}
+
+\tableofcontents \newpage
+
+\section{Example section of a chapter}
+
+\begin{theorem}
+Example theorem
+\end{theorem}
+
+\begin{definition}\label{112}
+Example definition
+\end{definition}
+
+\begin{remark}
+Example remark
+\end{remark}
+
+\begin{proof}
+Example proof
+\end{proof}
+
+Formula:
+$$x = 1$$
+
+Boxed formula:
+$$\boxed{x = 1}$$
+
+
+Code example:\\
+\\
+\begin{myC}
+int main(void) {
+    printf("Hi");
+}
+\end{myC}
+
+Reference example:\\
+\\
+to \ref{112}
+
+Numbered equation:\\
+\begin{equation}
+    x = 1
+\end{equation}
+
+\newpage
+
+Example image:\\
+\begin{figure}[htbp]
+  \centering
+     \includegraphics[width=0.7\textwidth]{bild.jpg}
+     \caption{Awesome Image}
+\end{figure}
+
+Example cite: \cite{test}\\
+
+\subsection{lorem ipsum}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer
+
+\newpage \begin{thebibliography}{999}
+
+\bibitem{test}
+Example url: \url{www.google.com}
+
+\end{thebibliography}
+
+
+
+\end{document}
