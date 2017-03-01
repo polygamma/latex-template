@@ -1,13 +1,24 @@
-\documentclass[11pt,twoside,final,a4paper]{amsart}
-
-\usepackage{amsmath,amsthm,amscd,amsfonts,amssymb,enumerate,minted,color,graphicx,stmaryrd}
-\usepackage[colorlinks]{hyperref}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\pdfoutput=1
+\documentclass[12pt]{amsart}
+\usepackage[latin1]{inputenc}
 \usepackage[english]{babel} % SET LANGUAGE HERE
+\usepackage[bookmarks=false]{hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\definecolor{dunkelrot}{rgb}{0.7,0,0}
+\definecolor{dunkelblau}{rgb}{0,0,0.7}
+\hypersetup{colorlinks=true,urlcolor=dunkelrot,linkcolor=dunkelrot,citecolor=dunkelblau}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{aliascnt}
+\usepackage{dsfont}
+\usepackage{minted}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
 \setlength\parindent{0pt}
+
 
 % % % MINTED % % %
 
@@ -88,23 +99,12 @@ int main(void) {
 }
 \end{myC}
 
-Reference example:\\
-\\
-to \ref{112}
+Reference example: to \ref{112}\\
 
 Numbered equation:\\
 \begin{equation}
     x = 1
 \end{equation}
-
-\newpage
-
-Example image:\\
-\begin{figure}[htbp]
-  \centering
-     \includegraphics[width=0.7\textwidth]{bild.jpg}
-     \caption{Awesome Image}
-\end{figure}
 
 Example cite: \cite{test}\\
 
@@ -117,13 +117,11 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 
 Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer
 
-\newpage \begin{thebibliography}{999}
+\begin{thebibliography}{999}
 
 \bibitem{test}
 Example url: \url{www.google.com}
 
 \end{thebibliography}
-
-
 
 \end{document}
