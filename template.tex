@@ -1,7 +1,7 @@
 \documentclass[bibliography=totoc,listof=totoc,BCOR=5mm,DIV=12,oneside]{scrbook}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[bookmarks=false]{hyperref}
+\usepackage{hyperref}
 \usepackage[usenames,dvipsnames,table,xcdraw]{xcolor}
 \definecolor{darkred}{rgb}{0.7,0,0}
 \definecolor{darkblue}{rgb}{0,0,0.7}
@@ -21,10 +21,11 @@
 \usepackage{float}
 \usepackage{minted}
 \usepackage[onehalfspacing]{setspace}
-
 \usepackage{csquotes}
 \usepackage[backend=biber, style=alphabetic]{biblatex}
-\addbibresource{testbib.bib}
+
+
+\addbibresource{testbib.bib} % IMPORTANT !!!
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
