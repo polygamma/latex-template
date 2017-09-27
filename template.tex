@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{amsart}
+\documentclass[bibliography=totoc,listof=totoc,BCOR=5mm,DIV=12,oneside]{scrbook}
 \usepackage[latin1]{inputenc}
 \usepackage[english]{babel}
 \usepackage[bookmarks=false]{hyperref}
@@ -11,7 +11,6 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{dsfont}
-\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{mathtools}
 \usepackage{stmaryrd}
 \setlength\parindent{0pt}
@@ -21,6 +20,11 @@
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{minted}
+\usepackage[onehalfspacing]{setspace}
+
+\usepackage{csquotes}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\addbibresource{testbib.bib}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -32,19 +36,13 @@
 
 \title{Great title for a great paper}
 \author{Author 1}
-\author{Author 2}
 
 \begin{document}
-
-
-\begin{abstract}
-This should be abstract.
-\end{abstract}
 
 \maketitle
 \tableofcontents
 
-\section{A bit of lorem ipsum}
+\chapter{A bit of lorem ipsum}
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\\\\   
 
@@ -58,7 +56,7 @@ Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie co
 
 At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
 
-\section{Table fun}
+\chapter{Table fun}
 
 \begin{longtable}[c]{@{}l|l|l@{}}
 \caption{Test table with fancy colors}
@@ -75,7 +73,7 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
 
 That table \ref{my-table} is great!
 
-\newpage\section{Picturing it}
+\newpage\chapter{Picturing it}
 
 No more floating problems with [H]!
 
@@ -83,9 +81,9 @@ No more floating problems with [H]!
 \includegraphics[width=\textwidth]{test.jpg}
 \end{figure}
 
-With [H] it's really "here"! And there's a test cite \cite{test}
+With [H] it's really "here"! And there's a test cite \footcite{ieeecitation09}
 
-\section{Minted}
+\chapter{Minted}
 
 Python code example:\\
 
@@ -94,7 +92,6 @@ Python code example:\\
 frame=lines,
 framesep=2mm,
 baselinestretch=1.2,
-bgcolor=lightgray,
 fontsize=\footnotesize,
 linenos
 ]
@@ -130,7 +127,7 @@ def incmatrix(genl1,genl2):
     return M
 \end{minted}
 
-\section{Math is always fun}
+\chapter{Math is always fun}
 
 Let $k_i$ be a stochastic transition kernel from $(\times_{j=0}^{i-1} \Omega_j,\times_{j=0}^{i-1} \mathcal{A}_j)$ to $(\Omega_i,\mathcal{A}_i)$.
 
@@ -143,11 +140,6 @@ Let's define the probability measures $P_i=P_0\otimes\bigotimes^i_{j=1}k_j$ on $
 
 Then why do we have that $P_i(A\times \Omega_{k+1} \cdots \times \Omega_{i})=P_j(A\times \Omega_{k+1} \cdots \times \Omega_{j})$, for any $A \in \times_{j=0}^{k} \mathcal{A}_j$ with $j,i\geq k$?
 
-\newpage\begin{thebibliography}{[XXX]}
-
-\bibitem{test}
-Example url: \url{www.google.com}
-
-\end{thebibliography}
+\printbibliography
 
 \end{document}
