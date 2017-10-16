@@ -25,7 +25,7 @@
 \usepackage[backend=biber, style=alphabetic]{biblatex}
 
 
-\addbibresource{testbib.bib} % IMPORTANT !!!
+\addbibresource{./testbib.bib} % IMPORTANT !!!
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -98,7 +98,8 @@ frame=lines,
 framesep=2mm,
 baselinestretch=1.2,
 fontsize=\footnotesize,
-linenos
+linenos,
+breaklines
 ]
 {python}
 import numpy as np
@@ -131,6 +132,18 @@ def incmatrix(genl1,genl2):
  
     return M
 \end{minted}
+
+\newpage
+Imported from file:
+
+\inputminted[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+fontsize=\footnotesize,
+linenos,
+breaklines
+]{python}{./code.py}
 
 \chapter{Math is always fun}
 
